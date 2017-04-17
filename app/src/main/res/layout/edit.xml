@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="wrap_content">
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="horizontal">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:gravity="center"
+			android:padding="10dp"
+			android:background="#D5D5D5">
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="アイテムを使った時"
+					android:onClick="useItem"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="mobを攻撃した時"
+					android:onClick="attackHook"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="一秒間20回"
+					android:onClick="modTick"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="コマンドを打った時"
+					android:onClick="procCmd"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="ワールドを開いた時"
+					android:onClick="newLevel"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="ワールドを閉じた時"
+					android:onClick="leaveGame"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="mobを追加した時"
+					android:onClick="entityAdded"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="mobを削除した時"
+					android:onClick="entityRemoved"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="mobが死んだ時"
+					android:onClick="deathHook"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="ドアが開いた/閉まった時"
+					android:onClick="levelEvent"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center"
+				android:padding="10dp">
+
+				<Button
+					style="?android:attr/buttonBarButtonStyle"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:text="ドアが開いている/閉まっている時"
+					android:onClick="blockEvent"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="top|left"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal"
+		android:padding="10dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="@string/home_editer"
+			android:onClick="goedit"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal"
+		android:padding="10dp">
+
+		<!--Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="@string/home_komakaisyusei"
+			android:onClick="openopenfill"/-->
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal"
+		android:padding="10dp">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="@string/home_kousinrireki"
+			android:onClick="kousin"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

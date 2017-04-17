@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:gravity="bottom"
+	android:background="#BDBDBD"
+	android:onClick="gohome">
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_vertical|center_horizontal">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_width="wrap_content"
+			android:text="MCPE EMD"
+			android:textColor="#FFFFFF"
+			android:textStyle="bold|italic"
+			android:textSize="70sp"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:text="ver. 0.0.1α"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="65dp"
+		android:layout_width="match_parent"
+		android:orientation="vertical"
+		android:background="#4A4A4A"
+		android:gravity="bottom|right">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="wrap_content"
+			android:text="Copyright (C) 2015 datensi All Rights Reserved"
+			android:textColor="#D2D2D2"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

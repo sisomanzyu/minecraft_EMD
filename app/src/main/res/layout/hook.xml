@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:background="#10000000">
+
+	<ImageButton
+		style="?android:attr/buttonBarButtonStyle"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:src="@android:drawable/ic_menu_close_clear_cancel"
+		android:onClick="closePopupWindow"/>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/muzyoken"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="muzyoken"
+			android:text="@string/useitem_muzyouken" />
+
+	</LinearLayout>
+
+	<!--LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="@string/useitem_zyouken"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="@string/useitem_kurikaesi"/>
+
+	</LinearLayout-->
+
+</LinearLayout>
+

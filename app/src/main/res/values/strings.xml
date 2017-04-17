@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">minecraftPE_EMD</string>
+	
+	<string name="home_home">ホーム</string>
+	<string name="home_editer">エディター</string>
+	<string name="home_komakaisyusei">細かい修正</string>
+    <string name="home_kousinrireki">更新履歴</string>
+	
+	<string name="openfill_fillopen">MOD選択</string>
+	<string name="openfill_newfill">新規MOD</string>
+	<string name="openfill_savedfill">セーブしたMOD</string>
+	<string name="openfill_fillmaneja">ファイルマネージャー</string>
+	
+	<string name="edit_edit">エディター</string>
+	
+	<string name="useitem_name">アイテムを使った時に</string>
+	<string name="useitem_muzyouken">無条件に</string>
+	<string name="useitem_zyouken">ある条件を満たしたら</string>
+	<string name="useitem_kurikaesi">繰り返して</string>
+	
+	<string name="print">画面にメッセージを表示する</string>
+    <string name="mod_print_tyui">表示する文字列を入力してください</string>
+	<string name="mod_print_kette">決定</string>
+	
+	<string name="TAG_1"></string>
+	<string name="TAG_2"></string>
+	
+	<string name="clientMessage">チャットに文字を表示する</string>
+	<string name="explode">爆発を起こす</string>
+	
+	<string name="changeLog">・EMDの基礎部分作成\n・全hookFunction追加\n・print、clientMessage、計2つの関数を追加\n</string>
+	</resources>
