@@ -9,10 +9,10 @@
 
 	<ImageButton
 		style="?android:attr/buttonBarButtonStyle"
-		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
-		android:src="@android:drawable/ic_menu_close_clear_cancel"
-		android:onClick="closePopupWindow"/>
+		android:layout_height="wrap_content"
+		android:onClick="closePopupWindow"
+		android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
 	<LinearLayout
 		android:layout_width="wrap_content"

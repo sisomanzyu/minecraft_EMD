@@ -33,9 +33,11 @@
 		
 		<activity
 			android:name=".EditActivity"
-			android:label="@string/edit_edit"
-			android:screenOrientation="landscape">
+			android:label="@string/edit_edit">
 		</activity>
+
+		<activity android:name=".PopupActivity"
+			android:theme="@style/PopupTheme"></activity>
 		
 		<activity
 			android:label="@string/home_kousinrireki"

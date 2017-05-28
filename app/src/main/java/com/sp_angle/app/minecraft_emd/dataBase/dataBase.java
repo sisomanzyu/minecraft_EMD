@@ -1,16 +1,23 @@
 package com.sp_angle.app.minecraft_emd.dataBase;
 import android.content.Context;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class dataBase
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class DataBase
 {
+	public static Context appContext;
+
 	public static View view;
-	public static Context context;
+	public static Context editActivityContext;
 	
 	public static LinearLayout popupWindowLinearLayout[]=new LinearLayout[500];
 	public static ScrollView popupWindowScrollView[]=new ScrollView[500];
@@ -32,5 +39,17 @@ public class dataBase
 	public static int argmentNumber=0;
 	
 	public static String functionName;
+
+
+	//popupList
+    public static String popupMode = Const.LIST_MODE_STRING;
+
+	public static String kindOfList;
+
+	public static List<String> koubunList = new ArrayList<String>(Arrays.asList(Const.SKIP));
+	public static List<String> functionList = new ArrayList<String>(Arrays.asList(Const.PRINT,Const.CLIENT_MESSAGE));
+
+    public static int valueInputType;
+    public static String hintOfEditText;
 }
 

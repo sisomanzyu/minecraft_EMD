@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.sp_angle.app.minecraft_emd.dataBase.dataBase;
+import com.sp_angle.app.minecraft_emd.dataBase.DataBase;
 import com.sp_angle.app.minecraft_emd.makeclass.Maker;
 import com.sp_angle.app.minecraft_emd.makeclass.Output;
 import com.sp_angle.app.minecraft_emd.popclass.ArgumentSelectionClass;
@@ -37,6 +37,9 @@ public class EditActivity extends Activity
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		switch(item.getItemId()){
+			case R.id.save:
+				output.output();
+
 			case R.id.menu_play:
 				
 				Intent patch =new Intent("net.zhuoweizhang.mcpelauncher.action.IMPORT_SCRIPT");
@@ -59,34 +62,37 @@ public class EditActivity extends Activity
 	Muzyoken muzyoken=managementOfInstance.muzyoken;
 	TextEditer textEditer=managementOfInstance.textEditer;
 	ArgumentSelectionClass argmentSelectionClass=managementOfInstance.argmentSelectionClass;
-	dataBase dataBase=new dataBase();
+	//DataBase DataBase=new DataBase();
 	
 	public void onCreate(Bundle savedInstanceState)
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit);
-		dataBase.context=this;
+		DataBase.appContext = getApplicationContext();
+		DataBase.editActivityContext =this;
 		
-		dataBase.popupWindowLinearLayout[0]=(LinearLayout)getLayoutInflater().inflate(R.layout.hook, null);
-		dataBase.popupWindowLinearLayout[1]=(LinearLayout)getLayoutInflater().inflate(R.layout.muzyoken, null);
-		dataBase.popupWindowLinearLayout[101]=(LinearLayout)getLayoutInflater().inflate(R.layout.print, null);
-		dataBase.popupWindowLinearLayout[201]=(LinearLayout)getLayoutInflater().inflate(R.layout.popupwindowframe,null);
+		DataBase.popupWindowLinearLayout[0]=(LinearLayout)getLayoutInflater().inflate(R.layout.hook, null);
+		DataBase.popupWindowLinearLayout[1]=(LinearLayout)getLayoutInflater().inflate(R.layout.muzyoken, null);
+		DataBase.popupWindowLinearLayout[101]=(LinearLayout)getLayoutInflater().inflate(R.layout.print, null);
+		DataBase.popupWindowLinearLayout[201]=(LinearLayout)getLayoutInflater().inflate(R.layout.popupwindowframe,null);
 
-		dataBase.argmentSelectionPopupWindowLinearLayoutChild=new LinearLayout(this);
-		dataBase.argmentSelectionPopupWindowLinearLayoutChild.setOrientation(LinearLayout.VERTICAL);
-		dataBase.popupWindowLinearLayout[201].addView(dataBase.argmentSelectionPopupWindowLinearLayoutChild);
-		dataBase.popupWindowScrollView[201]=new ScrollView(this);
-		dataBase.popupWindowScrollView[201].addView(dataBase.popupWindowLinearLayout[201]);
+		DataBase.argmentSelectionPopupWindowLinearLayoutChild=new LinearLayout(this);
+		DataBase.argmentSelectionPopupWindowLinearLayoutChild.setOrientation(LinearLayout.VERTICAL);
+		DataBase.popupWindowLinearLayout[201].addView(DataBase.argmentSelectionPopupWindowLinearLayoutChild);
+		DataBase.popupWindowScrollView[201]=new ScrollView(this);
+		DataBase.popupWindowScrollView[201].addView(DataBase.popupWindowLinearLayout[201]);
 	
-		dataBase.printEditText1=(EditText)dataBase.popupWindowLinearLayout[101].findViewById(R.id.printEditText1);
-		dataBase.printTextView1=(TextView)dataBase.popupWindowLinearLayout[101].findViewById(R.id.printTextView1);
+		DataBase.printEditText1=(EditText) DataBase.popupWindowLinearLayout[101].findViewById(R.id.printEditText1);
+		DataBase.printTextView1=(TextView) DataBase.popupWindowLinearLayout[101].findViewById(R.id.printTextView1);
 		
 		for(int hc=0;hc<hooked.length;hc++)hooked[hc]=false;	
-		for(int mkc=0; mkc<dataBase.script.length; mkc++)dataBase.script[mkc]="";
+		for(int mkc = 0; mkc< DataBase.script.length; mkc++) DataBase.script[mkc]="";
 		
-		dataBase.popupWindowCount=-1;
+		DataBase.popupWindowCount=-1;
     }
-	
+
+
+
 	//hook
 	String Hook;
 	boolean hooked[]=new boolean[100];
@@ -95,88 +101,89 @@ public class EditActivity extends Activity
 	int tyu=0;
 	
 	public void useItem(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function useItem(x,y,z,itemId,blockId,side,itemDamage,blockDamage){\n";
-		hook.hook(dataBase.hookOfKind,0,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function useItem(x,y,z,itemId,blockId,side,itemDamage,blockDamage){\n";
+		DataBase.kindOfList="koubun";
+		hook.hook(DataBase.hookOfKind,0, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void attackHook(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function attackHook(attacker,victim){\n";
-		hook.hook(dataBase.hookOfKind,1,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function attackHook(attacker,victim){\n";
+		hook.hook(DataBase.hookOfKind,1, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 
 	public void modTick(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function modTick(){\n";
-		hook.hook(dataBase.hookOfKind,2,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function modTick(){\n";
+		hook.hook(DataBase.hookOfKind,2, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 		
 	}
 	
 	public void procCmd(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function procCmd(cmd){\n";
-		hook.hook(dataBase.hookOfKind,3,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function procCmd(cmd){\n";
+		hook.hook(DataBase.hookOfKind,3, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void newLevel(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function newLevel(){\n";
-		hook.hook(dataBase.hookOfKind,4,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function newLevel(){\n";
+		hook.hook(DataBase.hookOfKind,4, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void leaveGame(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function leaveGame(){\n";
-		hook.hook(dataBase.hookOfKind,5,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function leaveGame(){\n";
+		hook.hook(DataBase.hookOfKind,5, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void entityAdded(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function entityAddedHook(entity){\n";
-		hook.hook(dataBase.hookOfKind,6,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function entityAddedHook(entity){\n";
+		hook.hook(DataBase.hookOfKind,6, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void entityRemoved(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function entityRemovedHook(entity){\n";
-		hook.hook(dataBase.hookOfKind,7,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function entityRemovedHook(entity){\n";
+		hook.hook(DataBase.hookOfKind,7, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void deathHook(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function deathHook(murderer, victim){\n";
-		hook.hook(dataBase.hookOfKind,8,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function deathHook(murderer, victim){\n";
+		hook.hook(DataBase.hookOfKind,8, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void levelEvent(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function levelEventHook(entity,eventType,x,y,z,data){\n";
-		hook.hook(dataBase.hookOfKind,9,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function levelEventHook(entity,eventType,x,y,z,data){\n";
+		hook.hook(DataBase.hookOfKind,9, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	public void blockEvent(View view){
-		dataBase.popupWindowCount=0;
-		dataBase.hookOfKind="function blockEventHook(x,y,z,eventType,data){\n";
-		hook.hook(dataBase.hookOfKind,10,dataBase.spaceInt,hooked,dataBase.popupWindowLinearLayout[0],view,this);
-		dataBase.spaceInt=1;
+		DataBase.popupWindowCount=0;
+		DataBase.hookOfKind="function blockEventHook(x,y,z,eventType,data){\n";
+		hook.hook(DataBase.hookOfKind,10, DataBase.spaceInt,hooked, DataBase.popupWindowLinearLayout[0],view,this);
+		DataBase.spaceInt=1;
 	}
 	
 	//bunpo
 	
 	public void muzyoken(View view){
 	    transitionPopupWindow.transitionPopupWindow();
-		dataBase.popupWindowCount=1;	
+		DataBase.popupWindowCount=1;
 		muzyoken.showFunctionPopupWindow(view);
 	}
 		
@@ -184,10 +191,10 @@ public class EditActivity extends Activity
 	
 	public void textFunctions(View view){
 		transitionPopupWindow.transitionPopupWindow();
-		dataBase.popupWindowCount=201;
-		dataBase.argmentKind=new String[1];
-		dataBase.argmentKind[0]="text";
-		dataBase.view=view;
+		DataBase.popupWindowCount=201;
+		DataBase.argmentKind=new String[1];
+		DataBase.argmentKind[0]="text";
+		DataBase.view=view;
 		argmentSelectionClass.argumentSelectionPopWindow();
 	}
 	
@@ -195,21 +202,21 @@ public class EditActivity extends Activity
 	
 	
 	public void print(View view){
-		dataBase.functionName="print(";
+		DataBase.functionName="print(";
 		textFunctions(view);
     }
 	
 	public void clientMessage(View view){
-		dataBase.functionName="clientMessage(";
+		DataBase.functionName="clientMessage(";
 		textFunctions(view);
 	}
 	
 	/*public void (View view){
 		transitionPopupWindow.transitionPopupWindow();
-		dataBase.popupWindowCount=201;
-		dataBase.functionName="";
-		dataBase.argmentKind=new String[];
-		dataBase.view=view;
+		DataBase.popupWindowCount=201;
+		DataBase.functionName="";
+		DataBase.argmentKind=new String[];
+		DataBase.view=view;
 		argmentSelectionClass.argumentSelectionPopWindow();
 		
 	}*/
@@ -220,6 +227,6 @@ public class EditActivity extends Activity
 	
 	public void closePopupWindow(View view){
 		transitionPopupWindow.transitionPopupWindow();
-		dataBase.spaceInt=0;
+		DataBase.spaceInt=0;
 	}
 }

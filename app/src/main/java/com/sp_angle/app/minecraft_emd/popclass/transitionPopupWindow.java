@@ -4,9 +4,8 @@ import com.sp_angle.app.minecraft_emd.dataBase.*;
 
 public class transitionPopupWindow
 {
-	dataBase dataBase=new dataBase();
 	public void transitionPopupWindow(){
-		switch(dataBase.popupWindowCount){
+		switch(DataBase.popupWindowCount){
 			case 0:
 				managementOfInstance.hook.hookc();
 				break;

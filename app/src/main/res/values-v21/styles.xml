@@ -2,4 +2,8 @@
 <resources>
     <style name="AppTheme" parent="@android:style/Theme.Material.Light">
 	</style>
+
+    <style name="PopupTheme" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

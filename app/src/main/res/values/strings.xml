@@ -29,6 +29,11 @@
 	
 	<string name="clientMessage">チャットに文字を表示する</string>
 	<string name="explode">爆発を起こす</string>
+
+	<string name="skip">スキップ</string>
+	<string name="hint_display_text">表示する文章を入力してください</string>
 	
+	<string name="completion">完了</string>
+
 	<string name="changeLog">・EMDの基礎部分作成\n・全hookFunction追加\n・print、clientMessage、計2つの関数を追加\n</string>
 	</resources>
