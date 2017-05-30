@@ -16,8 +16,7 @@
         android:theme="@style/AppTheme" >
 		<activity
 			android:name=".StartActivity"
-			android:theme="@android:style/Theme.Holo.NoActionBar"
-			android:screenOrientation="landscape">
+			android:theme="@android:style/Theme.Holo.NoActionBar">
 			<intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,8 +26,7 @@
 		
         <activity
             android:label="@string/home_home"
-            android:name=".HomeActivity"
-			android:screenOrientation="landscape">
+            android:name=".HomeActivity">
         </activity>
 		
 		<activity
@@ -36,13 +34,12 @@
 			android:label="@string/edit_edit">
 		</activity>
 
-		<activity android:name=".PopupActivity"
+		<activity android:name=".popup.PopupActivity"
 			android:theme="@style/PopupTheme"></activity>
 		
 		<activity
 			android:label="@string/home_kousinrireki"
-			android:name=".KousinActivity"
-			android:screenOrientation="landscape">
+			android:name=".KousinActivity">
 		</activity>
     </application>
 

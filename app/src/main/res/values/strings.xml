@@ -31,7 +31,9 @@
 	<string name="explode">爆発を起こす</string>
 
 	<string name="skip">スキップ</string>
+
 	<string name="hint_display_text">表示する文章を入力してください</string>
+	<string name="hint_speed">速さを入力してください</string>
 	
 	<string name="completion">完了</string>
 

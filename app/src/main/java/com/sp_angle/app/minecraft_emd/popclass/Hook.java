@@ -2,16 +2,13 @@ package com.sp_angle.app.minecraft_emd.popclass;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
-import com.sp_angle.app.minecraft_emd.EditActivity;
-import com.sp_angle.app.minecraft_emd.PopupActivity;
+import com.sp_angle.app.minecraft_emd.popup.PopupActivity;
 import com.sp_angle.app.minecraft_emd.dataBase.DataBase;
 import com.sp_angle.app.minecraft_emd.makeclass.Maker;
 import com.sp_angle.app.minecraft_emd.makeclass.Output;

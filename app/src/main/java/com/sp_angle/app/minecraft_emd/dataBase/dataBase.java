@@ -1,7 +1,6 @@
 package com.sp_angle.app.minecraft_emd.dataBase;
 import android.content.Context;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -11,6 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.sp_angle.app.minecraft_emd.dataBase.Const.*;
 
 public class DataBase
 {
@@ -42,12 +43,16 @@ public class DataBase
 
 
 	//popupList
-    public static String popupMode = Const.LIST_MODE_STRING;
 
 	public static String kindOfList;
 
 	public static List<String> koubunList = new ArrayList<String>(Arrays.asList(Const.SKIP));
-	public static List<String> functionList = new ArrayList<String>(Arrays.asList(Const.PRINT,Const.CLIENT_MESSAGE));
+	public static List<String> functionList = new ArrayList<String>(Arrays.asList(PRINT,CLIENT_MESSAGE));
+
+    public static List<String>argumentList = new ArrayList<String>();
+    public static List<String>argumentListHint = new ArrayList<String>();
+
+    public static List<String>editTextList = new ArrayList<String>();
 
     public static int valueInputType;
     public static String hintOfEditText;
