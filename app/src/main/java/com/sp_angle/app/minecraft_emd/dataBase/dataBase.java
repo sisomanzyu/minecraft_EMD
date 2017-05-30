@@ -47,14 +47,26 @@ public class DataBase
 	public static String kindOfList;
 
 	public static List<String> koubunList = new ArrayList<String>(Arrays.asList(Const.SKIP));
-	public static List<String> functionList = new ArrayList<String>(Arrays.asList(PRINT,CLIENT_MESSAGE));
+	public static List<String> functionList = new ArrayList<String>(Arrays.asList(PRINT,CLIENT_MESSAGE,TEST));
 
-    public static List<String>argumentList = new ArrayList<String>();
-    public static List<String>argumentListHint = new ArrayList<String>();
 
-    public static List<String>editTextList = new ArrayList<String>();
 
     public static int valueInputType;
     public static String hintOfEditText;
+
+    /**
+     * Created by watanabe-takumi on 2017/05/30.
+     */
+
+    public static class ListData {
+        public static ListData classInstance = new ListData();
+
+
+        public String popupMode = LIST_MODE;
+		public  List<String> argumentList = new ArrayList<String>(Arrays.asList(new String [255]));
+        public  List<String>argumentListHint = new ArrayList<String>();
+
+		public int argumentPosition;
+    }
 }
 

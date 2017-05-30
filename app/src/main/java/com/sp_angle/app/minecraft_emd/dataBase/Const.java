@@ -5,7 +5,7 @@ import com.sp_angle.app.minecraft_emd.R;
 import static com.sp_angle.app.minecraft_emd.dataBase.DataBase.editActivityContext;
 
 /**
- * Created by watanabe-takumi on 2017/05/28.
+ * Created by Sisoman on 2017/05/28.
  */
 
 public class Const {
@@ -28,9 +28,10 @@ public class Const {
     public static final String DISPLAY_TEXT_VALUE = "text";
     public static final String SPEED_VALUE = "int";
 
-    public static final String HINT_DISPLAY_TEXT = editActivityContext.getString(R.string.hint_display_text);
+    public static final String HINT_DISPLAY_TEXT = "表示する文章を入力してください";
     public static final String HINT_SPEED =editActivityContext.getString(R.string.hint_speed);
 
     public static final String COMPLETION = editActivityContext.getString(R.string.completion);
+    public static final String ADD_FUNCTION = "機能の追加";
 
 }
